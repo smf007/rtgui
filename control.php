@@ -18,13 +18,12 @@
 
 include "functions.php";
 include "config.php";
-//import_request_variables("gp","r_");
 
 $r_bulkaction = isset($_POST['bulkaction']) ? $_POST['bulkaction'] : null;
-$r_select = isset($_POST['select']) ? $_POST['select'] : null;
-$r_cmd = isset($_POST['cmd']) ? $_POST['cmd'] : null;
+$r_select = isset($_GET['select']) ? $_GET['select'] : (isset($_POST['select']) ? $_POST['select'] : null);
+$r_cmd = isset($_GET['cmd']) ? $_GET['cmd'] : null;
 $r_set_fpriority = isset($_POST['set_fpriority']) ? $_POST['set_fpriority'] : array();
-$r_hash = isset($_POST['hash']) ? $_POST['hash'] : null;
+$r_hash = isset($_GET['hash']) ? $_GET['hash'] : (isset($_POST['hash']) ? $_POST['hash'] : null);
 $r_set_tpriority = isset($_POST['set_tpriority']) ? $_POST['set_tpriority'] : null;
 $r_addurl = isset($_POST['addurl']) ? $_POST['addurl'] : null;
 $r_uploadtorrent = isset($_POST['uploadtorrent']) ? $_POST['uploadtorrent'] : null;

@@ -20,7 +20,6 @@ $execstart=$start=microtime(true);
 session_start();
 include "config.php";
 include "functions.php";
-//import_request_variables("gp","r_");
 
 $r_setsortkey = isset($_GET['setsortkey']) ? trim($_GET['setsortkey']) : null;
 $r_setsortord = isset($_GET['setsortord']) ? trim($_GET['setsortord']) : null;

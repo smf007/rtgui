@@ -16,9 +16,9 @@
 //  You should have received a copy of the GNU General Public License
 //  along with rtGui.  If not, see <http://www.gnu.org/licenses/>.
 
-import_request_variables("gp","r_");
-if ($r_dir=="" || !isset($r_dir)) $r_dir="/";
-if (!isset($r_hilitedir)) $r_hilitedir="";
+$r_dir = isset($_GET['dir']) ? $_GET['dir'] : "/";
+$r_hilitedir = isset($_GET['hilitedir']) ? $_GET['hilitedir'] : "";
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

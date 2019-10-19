@@ -29,11 +29,8 @@
 
 include "config.php";
 include "functions.php";
-import_request_variables("gp","r_");
 
-if (!isset($r_view)) {
-   $r_view="complete";
-}
+$r_view = isset($_GET['view']) ? $_GET['view'] : "complete";
 
 // header:
 header('Content-Type: text/xml');

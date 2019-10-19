@@ -19,7 +19,6 @@
 $execstart=$start=microtime(true);
 include "functions.php";
 include "config.php";
-//import_request_variables("gp","r_");
 
 $r_select = isset($_GET['select']) ? trim($_GET['select']) : 'files';
 $r_hash = isset($_GET['hash']) ? trim($_GET['hash']) : null;

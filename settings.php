@@ -20,7 +20,6 @@ session_start();
 $execstart=$start=microtime(true);
 include "functions.php";
 include "config.php";
-//import_request_variables("gp","r_");
 
 $r_setrefresh = isset($_POST['setrefresh']) ? intval($_POST['setrefresh']) : null;
 $r_setmaxup = isset($_POST['setmaxup']) ? intval($_POST['setmaxup']) : null;
