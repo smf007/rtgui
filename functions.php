@@ -294,6 +294,7 @@ function age($date) {
     if ($date==0) return "(File not found)";
     $periods=array("sec", "min", "hour", "day", "week", "month", "year");
     $lengths=array("60","60","24","7","4.35","12");
+    $diff=0;
     $now=time();
     // is it future date or past date
     if($now > $date) {    

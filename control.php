@@ -126,8 +126,14 @@ switch($r_cmd) {
       $response = do_xmlrpc(xmlrpc_encode_request("d.check_hash",array("$r_hash")));
       break;
 }
+
 $referer=parse_url($_SERVER['HTTP_REFERER']);
 $script=basename($referer['path']);
+if (!empty($referer['query'])) {
+    $referer_query=$referer['query'];
+} else {
+    $referer_query="";
+}
 if (($script!='index.php' && $script!='view.php' && $script!='feedread.php' && $script!='settings.php') || $r_cmd=="delete" ) $script='index.php';
-header("Location: $script?".$referer['query']);
+header("Location: $script?".$referer_query);
 ?>
