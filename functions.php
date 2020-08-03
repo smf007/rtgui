@@ -231,8 +231,8 @@ function get_peer_list($hash) {
 
 // Get gloabal stats
 function get_global_stats() {
-   $retarr['upload_cap'] = do_xmlrpc(xmlrpc_encode_request("throttle.global_up.max_rate",array("")));
-   $retarr['download_cap'] = do_xmlrpc(xmlrpc_encode_request("throttle.global_down.max_rate",array("")));
+   $retarr['upload_cap'] = do_xmlrpc(xmlrpc_encode_request("throttle.global_up.max_rate",array("","")));
+   $retarr['download_cap'] = do_xmlrpc(xmlrpc_encode_request("throttle.global_down.max_rate",array("","")));
    $retarr['library_version'] = do_xmlrpc(xmlrpc_encode_request("system.library_version",array("")));
    $retarr['client_version'] = do_xmlrpc(xmlrpc_encode_request("system.client_version",array("")));
    return $retarr;
@@ -241,8 +241,8 @@ function get_global_stats() {
 // Get overall download/upload rates... (Surely there's a better way of doing this!)
 function get_global_rates() {
    global $downloaddir;
-   $retarr[0]['ratedown']=do_xmlrpc(xmlrpc_encode_request("throttle.global_down.rate",array("")));
-   $retarr[0]['rateup']=do_xmlrpc(xmlrpc_encode_request("throttle.global_up.rate",array("")));
+   $retarr[0]['ratedown']=do_xmlrpc(xmlrpc_encode_request("throttle.global_down.rate",array("","")));
+   $retarr[0]['rateup']=do_xmlrpc(xmlrpc_encode_request("throttle.global_up.rate",array("","")));
    $retarr[0]['diskspace']=@disk_free_space($downloaddir);
    return $retarr;
 }
